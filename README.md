@@ -7,6 +7,7 @@ Docker and an internet connection
 ```
 # Clone the repository
 git clone --recursive https://github.com/FortisCard/fortis-iso.git
+cd fortis-iso
 
 # Build
 ./build.sh
