@@ -1,9 +1,15 @@
 # Fortis ISO
 
 # Dependencies
-Docker
+Docker and an internet connection
 
 # Usage
-Run `./build.sh`
+```
+# Clone the repository
+git clone --recursive https://github.com/FortisCard/fortis-iso.git
 
-ISO will be created in `build/` directory.
+# Build
+./build.sh
+```
+
+This will take a few minutes, so please be patient. The final ISO will be created in `build/` directory.

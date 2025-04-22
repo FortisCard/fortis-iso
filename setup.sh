@@ -36,6 +36,15 @@ ln -s custompkgs/custom.db.tar.gz custompkgs/custom.db
 
 echo "All AUR packages have been built and added to the custom repository."
 
+# Build the fortis-java-card-applet CAP file
+pushd /home/builduser/fortis-java-card-applet
+pushd lib/JCMathLib
+python3 package.py -c SecP256k1 -p 'com.fortis' -o ../../src/com/fortis/jcmathlib.java
+popd
+ant
+cp build/fortis-1.0.0.cap /home/builduser/fortis-profile/airootfs/root/
+popd
+
 # Build the ISO
 mkdir -p fortis-iso-workdir
 sudo mkarchiso -v -w fortis-iso-workdir -o build fortis-profile

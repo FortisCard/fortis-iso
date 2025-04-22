@@ -3,16 +3,17 @@ FROM archlinux:latest
 
 # Update the system and install necessary packages
 RUN pacman -Syu --noconfirm && \
-    pacman -S --needed --noconfirm base-devel git sudo grub jdk11-openjdk python archiso
+    pacman -S --needed --noconfirm base-devel git sudo grub jdk11-openjdk ant python archiso
 
 # Create build user
 RUN useradd builduser -m && \
     passwd -d builduser && \
     echo 'builduser ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
-# Copy the setup script and custom profile
+# Copy the setup script, custom profile, and fortis-java-card-applet source code
 COPY setup.sh /home/builduser/
 COPY fortis-profile /home/builduser/fortis-profile/
+COPY lib/fortis-java-card-applet /home/builduser/fortis-java-card-applet/
 
 # Set ownership
 RUN chown -R builduser:builduser /home/builduser
