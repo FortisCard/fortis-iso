@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # NOTE: This script is to be run inside the docker container. Do not run this directly.
+cd /home/builduser
+sudo pacman-key --init
+sudo archlinux-java set java-11-openjdk
 
 # Array of AUR packages to install
 aur_packages=(
@@ -19,9 +22,6 @@ build_aur_package() {
   cd ..
   rm -rf "${package}"
 }
-
-# Ensure we're in the home directory
-cd /home/builduser
 
 # build loop
 mkdir -p custompkgs

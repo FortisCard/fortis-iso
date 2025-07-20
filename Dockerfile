@@ -3,7 +3,7 @@ FROM archlinux:latest
 
 # Update the system and install necessary packages
 RUN pacman -Syu --noconfirm && \
-    pacman -S --needed --noconfirm base-devel git sudo grub jdk11-openjdk ant python archiso
+    pacman -S --needed --noconfirm base-devel git sudo grub jdk11-openjdk java-runtime-common ant python archiso
 
 # Create build user
 RUN useradd builduser -m && \
