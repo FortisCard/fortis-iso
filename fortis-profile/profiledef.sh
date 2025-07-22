@@ -3,7 +3,7 @@
 
 iso_name="fortis-iso"
 iso_label="FORTIS"
-iso_publisher="Fortis <https://website.com>"
+iso_publisher="Fortis <https://www.fortis-card.com>"
 iso_application="Fortis Card Setup Environment"
 iso_version="1.0.0"
 install_dir="arch"
